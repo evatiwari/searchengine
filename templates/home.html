@@ -10,7 +10,8 @@
 <body>
     <div id="search">
     <h1 id="searchhead">Search for papers below</h1>
-    <form action="search" method="GET" id="formsearch">
+    <form action="/search" method="POST" id="formsearch">
+        {% csrf_token %}
         <input type="text" placeholder="Search...">
         <input type="submit">
     </form>

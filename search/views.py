@@ -15,5 +15,8 @@ def home(request):
         return render(request,'home.html',{'form':upload})
 
 def search(request):
-    result='Result 1'
+    search=request
+    print(search)
+    result=Result.objects.filter(title__contains=search) #.filter(summary__contains=search)
+    print(request)
     return render(request,'search.html',{'result':result})
