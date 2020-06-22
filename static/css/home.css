@@ -1,0 +1,33 @@
+#search{
+    margin-left: 500px;
+    margin-right: 200px;
+    margin-top: 50px;
+    padding-bottom:50px;
+
+
+}
+
+#upload{
+    margin-left: 500px;
+    margin-right: 200px;
+    padding-top: 50px;
+}
+
+body{
+    font-family: arial,sans-serif;
+}
+
+#formupload{
+    padding-top: 20px;
+    font-size: 20px;
+    margin-left: 120px;
+}
+
+#formsearch{
+    padding-top: 20px;
+    font-size: 20px;
+    margin-left: 120px;
+}
+#searchhead{
+    padding-left:50px;
+}

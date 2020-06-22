@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/home.css' %}">
+</head>
+<body>
+    <div id="search">
+    <h1 id="searchhead">Search for papers below</h1>
+    <form action="search" method="GET" id="formsearch">
+        <input type="text" placeholder="Search...">
+        <input type="submit">
+    </form>
+    </div>
+    <div id="upload">
+    <h1>Or upload a file to the summarizer!</h1>
+    <form method="POST" enctype="multipart/form-data" class="post-form" id="formupload">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="send">Send</button>
+    </form>
+    </div>
+</body>
+</html>
