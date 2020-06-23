@@ -8,13 +8,15 @@
     <link rel="stylesheet" type="text/css" href="{%static 'css/search.css' %}">
 </head>
 <body>
-    <form action="/search">
-        <input type="text">
+    <form action="{% url 'search' %}">
+        <input type="text" name="search" placeholder="Search...">
         <input type="submit">
     </form>
     <h1>Here are your results:</h1>
-    {% block content %}
-    <p>{{result}}</p>
-    {% endblock %}
+    {% for result in results %}
+    <h2>{{result.title}}</h2>
+    <p>{{result.summary}}</p>
+    <p>File location in the server: {{result.destination}}</p>
+    {% endfor %}
 </body>
 </html>

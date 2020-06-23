@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Result
 from .forms import UploadForm
 from .functions import handle_uploaded_file
+from django.contrib.postgres.search import SearchVector
 # Create your views here.
 def home(request):
     if request.method=='POST':
@@ -12,11 +13,9 @@ def home(request):
             return HttpResponse("File sent to summarizer")
     else:
         upload=UploadForm()
-        return render(request,'home.html',{'form':upload})
+        return render(request,'home.html',{'uploadform':upload})
 
 def search(request):
-    search=request
-    print(search)
-    result=Result.objects.filter(title__contains=search) #.filter(summary__contains=search)
-    print(request)
-    return render(request,'search.html',{'result':result})
+    keyword=request.GET.get('search')
+    results= Result.objects.annotate(search=SearchVector('title','summary')).filter(search=keyword)
+    return render(request, "search.html",{'results':results})

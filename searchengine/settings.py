@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'searchengine.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'search',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',
-        'USER':'eva',
-        'PASSWORD':'eva123',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'doncampan',
+        'HOST': 'localhost',
+        
     }
 }
 

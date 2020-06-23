@@ -8,19 +8,18 @@
     <link rel="stylesheet" type="text/css" href="{%static 'css/home.css' %}">
 </head>
 <body>
-    <div id="search">
+    <div id="searchform">
     <h1 id="searchhead">Search for papers below</h1>
-    <form action="/search" method="POST" id="formsearch">
-        {% csrf_token %}
-        <input type="text" placeholder="Search...">
-        <input type="submit">
+    <form action="{% url 'search' %}" method="GET" id="formsearch">
+        <input type="text" name="search" placeholder="Search...">
+        <button type="submit" class="send">Search</button>
     </form>
     </div>
     <div id="upload">
     <h1>Or upload a file to the summarizer!</h1>
     <form method="POST" enctype="multipart/form-data" class="post-form" id="formupload">
     {% csrf_token %}
-    {{form.as_p}}
+    {{uploadform.as_p}}
     <button type="submit" class="send">Send</button>
     </form>
     </div>
