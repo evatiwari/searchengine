@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search Results</title>
     <link rel="stylesheet" type="text/css" href="{%static 'css/search.css' %}">
 </head>
 <body>
-    <form action="{% url 'search' %}">
+    <form action="{% url 'search' %}" id="searchform">
         <input type="text" name="search" placeholder="Search...">
         <input type="submit">
     </form>

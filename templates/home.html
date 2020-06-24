@@ -8,15 +8,18 @@
     <link rel="stylesheet" type="text/css" href="{%static 'css/home.css' %}">
 </head>
 <body>
+    <img src="{% static 'img/igcarlogo.png' %}" id="igcar">
+    <img src="{% static 'img/bitslogo.png' %}" id="bits">
+    <h1>Content Summarizer</h1>
     <div id="searchform">
-    <h1 id="searchhead">Search for papers below</h1>
+    <h2 id="searchhead">Search for papers below</h2>
     <form action="{% url 'search' %}" method="GET" id="formsearch">
-        <input type="text" name="search" placeholder="Search...">
+        <input type="text" name="search" placeholder="Search..." id="search">
         <button type="submit" class="send">Search</button>
     </form>
     </div>
     <div id="upload">
-    <h1>Or upload a file to the summarizer!</h1>
+    <h2>Or upload a file to the summarizer!</h2>
     <form method="POST" enctype="multipart/form-data" class="post-form" id="formupload">
     {% csrf_token %}
     {{uploadform.as_p}}

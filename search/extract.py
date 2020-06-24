@@ -10,11 +10,13 @@ import re
 import math
 import operator
 from nltk.stem import WordNetLemmatizer 
+from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize,word_tokenize
 nltk.download('averaged_perceptron_tagger')
 Stopwords = set(stopwords.words('english'))
 wordlemmatizer = WordNetLemmatizer()
+stemmer= PorterStemmer()
 def lemmatize_words(words):
     lemmatized_words = []
     for word in words:
