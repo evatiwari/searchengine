@@ -7,3 +7,10 @@
 body{
     font-family: arial,sans-serif;
 }
+#search{
+    height: 30px;
+    width: 200px;
+}
+#submit{
+    height:30px;
+}

@@ -9,8 +9,8 @@
 </head>
 <body>
     <form action="{% url 'search' %}" id="searchform">
-        <input type="text" name="search" placeholder="Search...">
-        <input type="submit">
+        <input type="text" name="search" placeholder="Search..." id="search">
+        <input type="submit" id="submit">
     </form>
     <h1>Here are your results:</h1>
     {% for result in results %}

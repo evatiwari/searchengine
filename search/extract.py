@@ -9,6 +9,7 @@ import os
 import re
 import math
 import operator
+from nltk.corpus import wordnet as wn
 from nltk.stem import WordNetLemmatizer 
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
